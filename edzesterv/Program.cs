@@ -56,6 +56,10 @@ namespace edzesterv
                     Console.WriteLine("Hibás adatot adott meg!");
                 }
             }
+            // edzésnapok bekérése
+
+
+
 
             if (cel == 1)
             {
