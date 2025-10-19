@@ -56,6 +56,51 @@ namespace Edzesterv
                             break;
                         }
                         Console.WriteLine("Érvénytelen súly! 50 és 120 közötti számot adjon meg.");
+
+                      
+                    // Cél kiválasztása
+                    Console.WriteLine("Válasszon célt:");
+                    Console.WriteLine("1 - Állóképesség fejlesztése");
+                    Console.WriteLine("2 - Izomtömeg növelése");
+                    Console.WriteLine("3 - Fogyás");
+                    string celSzoveg = "";
+                    while (true)
+                    {
+                        Console.Write("Adja meg a célt (1-3): ");
+                        celSzoveg = Console.ReadLine();
+                        if (int.TryParse(celSzoveg, out cel) && cel >= 1 && cel <= 3)
+                        {
+                            break;
+                        }
+                        Console.WriteLine("Érvénytelen cél! Csak 1, 2 vagy 3 lehet.");
+                    }
+
+                    // Alap értékek beállítása a cél szerint
+                    if (cel == 1)
+                    {
+                        edzesAlapHossz = 45;
+                        kaloriaSzorzo = 0.12;
+                    }
+                    else if (cel == 2)
+                    {
+                        edzesAlapHossz = 40;
+                        kaloriaSzorzo = 0.10;
+                    }
+                    else
+                    {
+                        edzesAlapHossz = 30;
+                        kaloriaSzorzo = 0.15;
+                    }
+
+                    // Heti edzésnapok bekérése
+                    int napok = 0;
+                    string napokSzoveg = "";
+                 
+
+
+    
+
+
                     }
                 }
             }
