@@ -128,7 +128,28 @@ namespace Edzesterv
 
                    
 
+ // Heti edzésidő számítása
+                    double hetiIdo = 0;
+                    for (int i = 0; i < napok; i++)
+                    {
+                        double napiIdo = edzesAlapHossz * (1 + 0.1 * erossegek[i]);
+                        hetiIdo += napiIdo;
+                    }
 
+                    // Kalória számítása
+                    double kaloriamennyiseg = suly * hetiIdo * kaloriaSzorzo;
+
+                    // Kiírás
+                    Console.WriteLine("\n--- Eredmények ---");
+                    Console.WriteLine($"Név: {vezeteknev} {keresztnev}");
+                    Console.WriteLine($"Cél: {celok[cel - 1]}");
+                    Console.WriteLine($"Heti edzésidő: {hetiIdo:F2} perc");
+                    Console.WriteLine($"Heti elégetett kalória: {kaloriamennyiseg:F2} kcal");
+
+                    Console.ReadKey();
+                }
+            }
+        
 
 
     
