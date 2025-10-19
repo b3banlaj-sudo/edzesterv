@@ -96,6 +96,39 @@ namespace Edzesterv
                     int napok = 0;
                     string napokSzoveg = "";
                  
+   while (true)
+                    {
+                        Console.Write("Hány napot szeretne edzeni a héten (1-7): ");
+                        napokSzoveg = Console.ReadLine();
+                        if (int.TryParse(napokSzoveg, out napok) && napok >= 1 && napok <= 7)
+                        {
+                            break;
+                        }
+                        Console.WriteLine("Érvénytelen nap! 1 és 7 közötti számot adjon meg.");
+                    }
+
+                    // Edzésnapok erősségi szintjei
+                    int[] erossegek = new int[napok];   // tömb létrehozása a napok számával 
+            for (int i = 0; i < napok; i++) // minden napra bekérés 
+            {
+                        string szintSzoveg = "";
+                        int szint = 0;
+                        while (true)
+                        {
+                            Console.Write($"Kérem a(z) {i + 1}. nap erősségi szintjét (1-5): ");
+                            szintSzoveg = Console.ReadLine();
+                            if (int.TryParse(szintSzoveg, out szint) && szint >= 1 && szint <= 5)
+                            {
+                                erossegek[i] = szint;
+                                break;
+                            }
+                            Console.WriteLine("Érvénytelen erősség! 1 és 5 közötti számot adjon meg.");
+                        }
+                    }
+
+                   
+
+
 
 
     
