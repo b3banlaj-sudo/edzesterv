@@ -149,12 +149,5 @@ namespace Edzesterv
                     Console.ReadKey();
                 }
             }
-        
-
-
-    
-
-
                     }
-                }
-            }
+           
