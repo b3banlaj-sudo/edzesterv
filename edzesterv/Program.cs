@@ -1,95 +1,61 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace edzesterv
-{
-    internal class Program
-    {
-        static void Main(string[] args)
+
+
+              
+
+namespace Edzesterv
         {
-            string keresztnev;
-            string vezeteknev;
-            int suly;
-            int cel;
-           
-            Console.WriteLine("Edzésterv");
-            Console.Write("Kérem a vezetéknevét: ");
-            vezeteknev = Console.ReadLine();
-            Console.Write("Kérem a nevét: ");
-            keresztnev = Console.ReadLine();
-            Console.Write("(kilogrammban, valós szám 50 és 120 között) ");
-            suly = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Kérem a célját (állóképesség fejlesztés, izomtömeg növelés, fogyás ): ");
-            cel = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Köszönöm a válaszokat!");
-
-
-
-
-           
-
-            while (cel > 0) {
-                Console.Write("Hány napot szeretne edzeni a héten: ");
-                int edzesnap = Convert.ToInt32(Console.ReadLine());
-                if (edzesnap >0 )
+            internal class Program
+            {
+                static void Main(string[] args)
                 {
-                    for (int i = 1; i <= edzesnap; i++)
+                    string vezeteknev ;
+                    string keresztnev ;
+                    int suly = 0;
+                    int cel = 0;
+                    double edzesAlapHossz = 0;
+                    double kaloriaSzorzo = 0;
+                    string[] celok = { "Állóképesség", "Izomtömeg", "Fogyás" };
+
+                    // Név bekérése és ellenőrzése
+                    while (true)
                     {
-                        Console.Write($"Kérem az {i}. nap erősségi szintjét (1-5): ");
-                        int erosseg = Convert.ToInt32(Console.ReadLine());
-                        if (erosseg < 1 || erosseg > 5)
+                        Console.Write("Kérem a vezetéknevét (nagybetűvel kezdve): ");
+                        vezeteknev = Console.ReadLine();
+                        if (char.IsUpper(vezeteknev[0]))
                         {
-                            Console.WriteLine("Hibás adatot adott meg!");
-                            i--;
+                            break;
                         }
+                        Console.WriteLine("Hibás név! Nagybetűvel kell kezdődnie.");
                     }
-                    break;
-                }
-                else
+
+                    while (true)
+                    {
+                        Console.Write("Kérem a keresztnevét (nagybetűvel kezdve): ");
+                        keresztnev = Console.ReadLine();
+                        if (char.IsUpper(keresztnev[0]))
+                        {
+                            break;
+                        }
+                        Console.WriteLine("Hibás név! Nagybetűvel kell kezdődnie.");
+                    }
+
+                    // Testsúly bekérése (50-120 kg között)
+                    string sulySzoveg = "";
+                    while (true)
+                    {
+                        Console.Write("Kérem a testsúlyát (kg, 50 és 120 között): ");
+                        sulySzoveg = Console.ReadLine();
+                        if (int.TryParse(sulySzoveg, out suly) && suly >= 50 && suly <= 120) // érvényes szám és tartomány
                 {
-                    Console.WriteLine("Hibás adatot adott meg!");
+                            break;
+                        }
+                        Console.WriteLine("Érvénytelen súly! 50 és 120 közötti számot adjon meg.");
+                    }
                 }
             }
-            // edzésnapok bekérése
-
-
-
-
-            if (cel == 1)
-            {
-
-
-
-            }
-            else if (cel == 2)
-            {
-
-            }
-            else if (cel == 3)
-            {
-
-            }
-            else
-            {
-                Console.WriteLine("Hibás adatot adott meg!");
-            }
-
-
-
-            Console.ReadKey();
-
-
-          
-
-
-
-
-        }
-    }
-}
