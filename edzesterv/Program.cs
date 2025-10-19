@@ -46,16 +46,16 @@ namespace Edzesterv
                     }
 
                     // Testsúly bekérése (50-120 kg között)
-                    string sulySzoveg = "";
-                    while (true)
-                    {
-                        Console.Write("Kérem a testsúlyát (kg, 50 és 120 között): ");
-                        sulySzoveg = Console.ReadLine();
-                        if (int.TryParse(sulySzoveg, out suly) && suly >= 50 && suly <= 120) // érvényes szám és tartomány
-                {
-                            break;
-                        }
-                        Console.WriteLine("Érvénytelen súly! 50 és 120 közötti számot adjon meg.");
+ while (true)
+ {
+     Console.Write("Kérem a testsúlyát (kg, 50 és 120 között): ");
+     string bemenet = Console.ReadLine();
+     if (int.TryParse(bemenet, out suly) && suly >= 50 && suly <= 120)
+     {
+         break;
+     }
+     Console.WriteLine("Érvénytelen súly! 50 és 120 közötti számot adjon meg.");
+ }
 
                       
                     // Cél kiválasztása
